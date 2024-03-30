@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="imagenes/logo.png" alt="Logo de AluraLatam" class="logo">
+    </header>
+    <main>
+        <div class="contenedor">
+            <section class="escribirContenedor">
+                <textarea onkeyup="verificarMayusculasCaracteresEspeciales()"  onkeypress="bloqueoCaracteresEspeciales(event)" id="textareaid"class="text-area" cols="30" rows="10" placeholder="Ingrese texto aquí"></textarea>
+                <div>
+                    <img src="imagenes/bi_exclamation-circle-fill.png"><h6 class="advertencia">Solo letras minúsculas y sin acento</h6>
+                </div>
+                <div class="botones">
+                    <button  onclick="botonEncriptar()" class="btn-encriptar">Encriptar</button>
+                    <button onclick="botonDesencriptar()" class="btn-deseencriptar">Desencriptar</button>
+                </div>
+            </section>
+            <section class="mensajeContenedor" id="mensajeContenedorId">
+                <textarea readonly hidden id="mensajeTextareaId" cols="30" rows="10" class="mensajeTextarea"></textarea>
+                <div id="mensajeId" class="mensaje">
+                    <p>Ningun mensaje fue encontrado</p>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <button hidden onclick="copiarTexto()" id="boton-copiar" class="copiar">Copiar</button>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Desarrollado por Ricardo Arellano González - &copy; Copyright 2024</p>
+        <a href="https://github.com/penzo2000">
+            <img src="imagenes/Logo.png" alt="GitHub Logo">
+        </a>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>
